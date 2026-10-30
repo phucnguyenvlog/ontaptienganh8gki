@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Luyện tập English 8 – Mid-term Test 1</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f6f4ee;--sf:#fff;--tx:#1d2a2a;--mu:#5f6d6b;--ac:#0f6b62;--ln:#d8d4c8;--ok:#1b7a3d;--okb:#dff3e4;--no:#b3261e;--nob:#fbe3e0;--sl:#e3eefc}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121816;--sf:#1b2321;--tx:#e8efed;--mu:#9bb0ac;--ac:#4fc7b8;--ln:#33403d;--ok:#6fdc93;--okb:#173a24;--no:#ff9a92;--nob:#42201d;--sl:#1d3250}}
+html{scroll-padding-top:60px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 Georgia,"Times New Roman",serif}
+main{max-width:720px;margin:0 auto;padding:16px 14px 90px}
+h1{font-size:1.5rem;margin:8px 0 4px}
+h2{font-size:1.1rem;margin:28px 0 8px;color:var(--ac)}
+.mu{color:var(--mu);font-size:.9rem}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:10px;padding:14px;margin:12px 0}
+.opt-g{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 12px}
+.opt-g label{flex:1 1 140px;border:1.5px solid var(--ln);border-radius:8px;padding:10px;cursor:pointer;background:var(--sf)}
+.opt-g input{margin-right:6px;accent-color:var(--ac)}
+.opt-g label:has(input:checked){border-color:var(--ac);background:var(--sl)}
+button{font:inherit;cursor:pointer}
+.go{width:100%;padding:13px;border:0;border-radius:8px;background:var(--ac);color:var(--bg);font-weight:bold;font-size:1.05rem}
+#bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--ln);padding:8px 0;display:flex;gap:8px;align-items:center;justify-content:space-between}
+#bar button{border:1px solid var(--ln);background:var(--sf);color:var(--tx);border-radius:6px;padding:6px 10px}
+.pass{white-space:pre-line;font-size:.95rem;border-left:3px solid var(--ac);padding:4px 0 4px 12px;margin:8px 0 14px}
+.q{background:var(--sf);border:1px solid var(--ln);border-radius:10px;padding:12px;margin:10px 0}
+.qt{margin:0 0 8px;font-weight:bold}
+.o{display:block;width:100%;text-align:left;padding:9px 11px;margin:5px 0;border:1.5px solid var(--ln);border-radius:8px;background:var(--bg);color:var(--tx)}
+.o.sel{border-color:var(--ac);background:var(--sl)}
+.o.ok{border-color:var(--ok);background:var(--okb);color:var(--ok)}
+.o.no{border-color:var(--no);background:var(--nob);color:var(--no)}
+.o:disabled{cursor:default}
+.o:focus-visible,.go:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+#res{text-align:center;font-size:1.2rem}
+#res b{font-size:2rem;color:var(--ac)}
+#sub{position:fixed;left:0;right:0;bottom:0;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:var(--bg);border-top:1px solid var(--ln)}
+[hidden]{display:none!important}
+</style></head><body><main>
+<section id="setup">
+<h1>Luyện tập English 8</h1>
+<p class="mu">Revision for the Mid-term Test 1 · 60 câu</p>
+<div class="card">
+<b>Thứ tự câu hỏi</b>
+<div class="opt-g"><label><input type="radio" name="ord" value="0" checked>Đề gốc</label><label><input type="radio" name="ord" value="1">Đảo đề</label></div>
+<b>Cách chấm</b>
+<div class="opt-g"><label><input type="radio" name="md" value="0" checked>Chọn là ra kết quả ngay</label><label><input type="radio" name="md" value="1">Chọn hết rồi nộp bài</label></div>
+<button class="go" onclick="start()">Bắt đầu làm bài</button>
+</div>
+<p class="mu">Đảo đề: xáo trộn thứ tự câu trong từng phần và thứ tự đáp án A–D.</p>
+</section>
+<section id="test" hidden>
+<div id="bar"><span id="st"></span><button onclick="back()">Đổi cài đặt</button></div>
+<div id="res" class="card" hidden></div>
+<div id="qs"></div>
+<div id="sub" hidden><button class="go" onclick="submit()">Nộp bài</button></div>
+</section>
+</main>
+<script>
+const D=[
+{t:"Phần I – Language Focus",p:"",q:[
+["I’m not ________ doing DIY. I’m never able to finish any DIY projects I start.","in|on|about|into",3],
+["Mai’s dad likes ________ spring rolls when her family has parties.","doing|making|cooking|trying",1],
+["You can learn something about IT, and computer skills by ________.","knit|watch TV|surfing the net|playing",2],
+["Parents should give teens some freedom, ________ they should also set limits.","for|so|but|and",2],
+["Today Peter gets up ________ than he did yesterday.","earlier|more early|more earlily|more earlier",0],
+["Look! Some children are ________ the buffaloes.","picking|playing|driving|herding",3],
+["Tom helps his family to herd ________ at weekends.","cattle|poultry|cats|fruit",0],
+["Ba: What leisure activities do you usually do with your mum? Nam: ________","She enjoys doing yoga.|She goes to work at 7 a.m.|She watches TV in her leisure time.|We cook, do DIY, and cycle together.",3],
+["Chọn từ có trọng âm chính khác với các từ còn lại.","connect|stressful|famous|forum",0],
+["Chọn từ có phần gạch chân (oo) phát âm khác: ","school|room|book|food",2],
+["Chọn từ có phần gạch chân phát âm khác các từ còn lại.","detest|resort|prefer|harvest",3],
+["Chọn từ có trọng âm chính khác với các từ còn lại.","pressure|forum|dislike|leisure",2],
+["When summer comes, children in the countryside love ________ kites on the vast paddy fields.","flying|loading|herding|catching",0],
+["During the harvest time, farmers usually use a combine harvester to ________ rice from the fields.","herd|harvest|load|feed",1],
+["We love the lifestyle in this small village because the local people are very warm and ________.","hospitable|modern|noisy|vast",0],
+["An: “What do you like doing in your free time?” – Binh: “________”","I don’t like it at all.|I usually hang out with my friends.|Thank you for asking me.|Yes, I am very busy.",1],
+["The weather was heavily stormy this morning, ________ our school presentation club was cancelled.","but|or|so|for",2],
+["She has been interested ________ reading comics since she was seven years old.","at|in|on|about",1],
+["Students today suffer from peer pressure ________ than they did in the past.","heavily|more heavily|heavier|as heavy",1],
+["Tom is fond of ________ DIY projects in his leisure time. He just made a paper dollhouse.","doing|taking|playing|making",3],
+["I’m ________ of taking photos. In my free time, I usually go out and take photos of people and things.","fond|keen|interested|proud",0],
+["Mai is ________ in history. She often goes to museums to see new exhibits and learn about the past.","crazy|keen|interested|proud",2],
+["My sister is ________ on cooking. She wants to become a chef in the future.","fond|keen|interested|proud",1],
+["My brother spends lots of time surfing the net, but I’m not ________ it.","into|in|for|on",0],
+["I’m not crazy ________ doing DIY. I’m never able to finish any DIY projects I start.","into|on|for|about",3],
+["Mr Long dislikes ________ the Net in the evening.","to surf|surf|surfed|surfing",3],
+["Mono is very ________ in watching “Tom and Jerry” cartoon.","keen|interested|crazy|fond",1],
+["We couldn’t do the puzzles ________ we were busy.","because|because of|although|when",0],
+["It was cold and wet, ________ Bob still went to the beach.","therefore|so|but|however",2],
+["We should ________ sport because it is good for our health.","play|do|make|take",0]]},
+{t:"Phần II.1 – Cloze: Free Time Activities",p:"In their free time, many teenagers enjoy different leisure activities. Some like playing sports such as football or badminton, while others (1) ________ quieter hobbies like reading or drawing. Online activities are also popular. Many students spend hours (2) ________ the Internet, chatting with friends, or watching videos.\nLeisure time is important because it helps us relax and (3) ________ stress after a busy school day. However, we should not spend too much time on smartphones or computer games. It is better to balance online hobbies with outdoor ones.\n(4) ________ activities such as cooking, gardening, or making (5) ________ can also improve our creativity and give us useful life skills.",q:[
+["Chỗ trống (1)","prefer|mind|fancy|avoid",0],
+["Chỗ trống (2)","surf|surfed|to surf|surfing",3],
+["Chỗ trống (3)","cause|reduce|make|get",1],
+["Chỗ trống (4)","Health|Healthy|Healthily|Unhealthy",1],
+["Chỗ trống (5)","in|on|at|about",1]]},
+{t:"Phần II.2 – Cloze: Teenagers’ free time",p:"Nowadays, teenagers have many ways to spend their free time. Some of them enjoy (1) ________ outdoor activities with their friends, while others prefer staying at home. Many students think that (2) ________ is a good way to relax because it helps them learn new things. They also like watching videos and listening to music in their free time; However, spending too much time online can have a negative (3) ________ on their health and study. Therefore, teenagers should have a (4) ________ balance between study and leisure activities. They can take up sports, go for a walk, or meet friends instead of sitting all day (5) ________ a computer.",q:[
+["Chỗ trống (1)","join|joining|to join|joined",1],
+["Chỗ trống (2)","speaking books|writing books|reading books|listening books",2],
+["Chỗ trống (3)","effect|effective|effectively|affect",0],
+["Chỗ trống (4)","So|But|Therefore|However",3],
+["Chỗ trống (5)","between|behind|near|in front of",3]]},
+{t:"Phần II.3 – Cloze: My village",p:"My village is about 50 kilometers from the city center. It is very (1) ________, and where people plant flowers and vegetables only. It is very famous (2) ________ its pretty roses and picturesque scenes. The air is quite fresh, however, the smell of the roses make people (3) ________ cool. In spring, my village looks like a carpet with plenty of (4) ________. Tourists come to visit it so often. Nowadays, with electricity, it doesn’t take the villagers much time (5) ________ the roses.",q:[
+["Chỗ trống (1)","beauty|beautiful|beautify|beautifully",1],
+["Chỗ trống (2)","with|on|for|to",2],
+["Chỗ trống (3)","to feel|feeling|felt|feel",3],
+["Chỗ trống (4)","color|coloring|colorful|colors",3],
+["Chỗ trống (5)","water|watered|to water|watering",2]]},
+{t:"Phần II.4 – Reading: Teen stress",p:"Teenagers today live in a very competitive world. It is more important than ever to succeed at school if you hope to have a chance in the job market afterwards. It’s no wonder that many young people worry about letting down their parents, their peers, and themselves. To try to please everyone, they take on too many tasks until it becomes harder and harder to balance homework assignments, parties, sports activities, and friends. The result is that young people suffer from stress.\nThere are different ways of dealing with stress. Everyone knows that caffeine, in the form of coffee or soft drinks, keeps you awake and alert. But caffeine is a drug that becomes addictive. In the end, like other drugs, caffeine only leads to more stress. There are better ways to deal with stress: physical exercise is a good release for stress, because it increases certain chemicals in the brain that calm you down. You have to get enough sleep to avoid stress and to stay healthy and full of energy. Another way to avoid stress is to manage your time effectively. It is better to do a few tasks really well than lots of tasks badly. Know your limits and try not to take on too much.\nFinally, if it all gets beyond your control, don’t panic or get hysterical. Find the time to sit down quietly and breathe deeply for ten to twenty minutes. Do this regularly, and it will help you calm down and put things into perspective.",q:[
+["What is the passage mainly about?","Why teenagers don’t like studying.|Different causes of and solutions to teen stress.|How caffeine helps teenagers reduce stress.|Why parents put pressure on teenagers.",1],
+["The word “addictive” in paragraph 2 is closest in meaning to ________.","easy to drink|causing dependence|not healthy|temporary",1],
+["The phrase “it all” in the last paragraph refers to ________.","all the stress and problems|enough sleep|drinking coffee|physical exercise",0],
+["Which of the following is NOT true according to the passage?","Many teenagers feel pressure from parents and friends.|Caffeine is a healthy way to deal with stress.|Physical exercise can help calm you down.|Time management is an important way to reduce stress.",1],
+["What can be inferred from the passage?","Teenagers who do too many tasks may feel more stressed.|Drinking coffee always makes teenagers more successful.|Stress cannot be reduced, only increased.|Teenagers should avoid sleeping too much.",0]]},
+{t:"Phần II.5 – Reading: Life on a farm",p:"The thing I like most about living on a farm when I was small was the change of seasons: spring, summer, autumn and winter. I could see the change all come and go and each one was completely different. If I hadn’t been born and raised in the country, I would have never been able to tell the difference. Now in the city, you can buy summer flowers in winter and eat the same vegetables all the year round. Whereas, in the country I could only eat things at certain times of the year. For example, strawberries in June and turnips in winter lived my childhood with the seasons. Also we made most of our food and would never eat frozen or tinned food. Everything was fresh, so it must be better than the type of food I am taking now in the city. City people think that people in the country miss a lot of good things about modern life, but in my opinion they miss a lot more than them. They miss real life.",q:[
+["What is the main idea of the passage?","The author used to live in the country.|Food in the country in comparison to that in the city.|There are four seasons in the countryside|Comparison between life on a farm and that in the city.",3],
+["According to the author, the seasons on a farm were ________.","very different from one another|different from those in the city|the same as those in the city|very beautiful but boring",0],
+["Find the word in the passage closest with “for example”.","such as|the same|different from|may be",0],
+["What can be inferred from the passage about the experience of seasons in a year for the city people?","Seasons are similar|It may be difficult for them to tell seasonal difference|They see different seasons come and go|Food is similar in all four season",1],
+["According to the passage, all the following are true EXCEPT that ________.","there are four seasons in the country where the author used to live|the author was born and raised on a farm|people in the country eat the same type of food all the year round|the author takes frozen and tinned food now",2]]},
+{t:"Phần II.6 – Reading: Living in the country",p:"Living in the country is something that people from the city often dream about. However, in reality, it has both its advantages and disadvantages.\nThere are certainly many advantages to living in the country. First of all, you can enjoy peace and quiet. Moreover, people tend to be friendlier and more open. A further advantage is that there is less traffic, so it is safer for young children.\nHowever, there are certain drawbacks to life outside the city. Firstly, because there are fewer people, you are likely to have fewer friends. In addition, entertainment is difficult to find, particularly in the evening. Furthermore, the fact that there are fewer shops and services means that it is harder to find work. As a result, you may have to travel a long way to work, which can be extremely expensive.\nIn conclusion, it can be seen that the country is more suitable for some people than others. On the whole, it is often the best place for those who are retired or who have young children. In contrast, young, single people who have a career are better provided for in the city.",q:[
+["According to the passage, living in the country has ________.","only good points|only bad points|both good and bad points|no disadvantages",2],
+["How many advantages does living in the country have?","Two|Three|Four|No",1],
+["Living in the country is safe for young children because ________.","there is less traffic|there are few shops|there are fewer people|there are few services",0],
+["Which of the following statements is not true according to the passage?","People in the country tend to be friendlier than people in the city.|It’s hard to find entertainment in the country.|There are fewer shops and services in the country.|The country is only suitable for retired people.",3],
+["Having few friends is ________.","one of drawbacks to life in the country.|the only disadvantage to living in the country|one of certain drawbacks to life outside the city|one of certain advantages to life outside the city",0]]}
+];
+let cur,mode,done,$=id=>document.getElementById(id);
+const sh=a=>{for(let i=a.length-1;i>0;i--){let j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+const rv=n=>document.querySelector('input[name='+n+']:checked').value;
+function start(){
+ const shuf=rv('ord')=='1';mode=rv('md');done=false;
+ cur=D.map(g=>{let q=g.q.map(x=>({t:x[0],sel:null,o:(r=>shuf?sh(r):r)(x[1].split('|').map((s,k)=>({s,c:k==x[2]})))}));return{t:g.t,p:g.p,q:shuf?sh(q):q}});
+ $('setup').hidden=true;$('test').hidden=false;$('res').hidden=true;$('sub').hidden=mode!='1';
+ let n=0,h='';
+ cur.forEach((g,gi)=>{h+='<h2>'+g.t+'</h2>'+(g.p?'<div class="pass">'+g.p+'</div>':'');
+  g.q.forEach((q,qi)=>{n++;q.n=n;h+='<div class="q" id="q'+gi+'_'+qi+'"></div>'})});
+ $('qs').innerHTML=h;
+ cur.forEach((g,gi)=>g.q.forEach((q,qi)=>paint(gi,qi)));
+ stat();scrollTo(0,0);
+}
+function paint(gi,qi){
+ const q=cur[gi].q[qi],rev=(mode=='0'&&q.sel!=null)||done;
+ let h='<p class="qt">'+q.n+'. '+q.t+'</p>';
+ q.o.forEach((o,k)=>{
+  let c=rev?(o.c?'ok':(q.sel==k?'no':'')):(q.sel==k?'sel':'');
+  h+='<button class="o '+c+'" '+(rev?'disabled ':'')+'onclick="pick('+gi+','+qi+','+k+')">'+'ABCD'[k]+'. '+o.s+'</button>'});
+ $('q'+gi+'_'+qi).innerHTML=h;
+}
+function pick(gi,qi,k){
+ const q=cur[gi].q[qi];
+ if(done||(mode=='0'&&q.sel!=null))return;
+ q.sel=k;paint(gi,qi);stat();
+}
+function tally(){let a=0,r=0,t=0;cur.forEach(g=>g.q.forEach(q=>{t++;if(q.sel!=null){a++;if(q.o[q.sel].c)r++}}));return{a,r,t}}
+function stat(){
+ const s=tally();
+ $('st').textContent='Đã chọn '+s.a+'/'+s.t+(mode=='0'||done?' · Đúng '+s.r:'');
+}
+function submit(){
+ const s=tally();
+ if(s.a<s.t&&!confirm('Bạn còn '+(s.t-s.a)+' câu chưa chọn. Vẫn nộp bài?'))return;
+ done=true;$('sub').hidden=true;
+ cur.forEach((g,gi)=>g.q.forEach((q,qi)=>paint(gi,qi)));
+ const r=$('res');r.hidden=false;
+ r.innerHTML='Kết quả: <b>'+s.r+'/'+s.t+'</b><br><span class="mu">Điểm thang 10: '+(s.r/s.t*10).toFixed(2)+' · Câu sai và đáp án đúng đã được tô màu bên dưới</span>';
+ stat();scrollTo(0,0);
+}
+function back(){if(!done&&tally().a&&!confirm('Quay lại sẽ xóa bài đang làm. Tiếp tục?'))return;$('test').hidden=true;$('setup').hidden=false;scrollTo(0,0)}
+</script></body></html>
